@@ -201,9 +201,15 @@ public class cadastroScreenAlunos extends javax.swing.JDialog {
 
 try{
     
-      if(!jTextFieldnomecompleto.getText().equals("")){   
-    
-    
+      if(!jTextFieldnomecompleto.getText().equals("")
+        && !jTextFieldendereco.getText().equals("")
+        &&  !jTextFieldEmail.getText().equals("")
+        &&  !jTextFieldUsuario.getText().equals("")
+        &&  !jTextFieldsenha.getText().equals("")     
+              
+              ){  
+         
+      
            Alunos alunos = new Alunos();
            alunos.setNomecompleto(jTextFieldnomecompleto.getText());
            alunos.setEndereco(jTextFieldendereco.getText());
@@ -214,7 +220,7 @@ try{
            JOptionPane.showMessageDialog(rootPane,"Aluno salvo com sucesso");
            
       }else{
-           JOptionPane.showMessageDialog(rootPane,"Campo nome obrigatório");
+           JOptionPane.showMessageDialog(rootPane,"Por Favor ,preencha todos os campos");
       }
 }catch(Exception ex){
     throw new RuntimeException("Erro ao Salvar Aluno",ex);
