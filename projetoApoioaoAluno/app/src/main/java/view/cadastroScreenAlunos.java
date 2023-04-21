@@ -200,6 +200,10 @@ public class cadastroScreenAlunos extends javax.swing.JDialog {
     private void jButtonCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCadastrarMouseClicked
 
 try{
+    
+      if(!jTextFieldnomecompleto.getText().equals("")){   
+    
+    
            Alunos alunos = new Alunos();
            alunos.setNomecompleto(jTextFieldnomecompleto.getText());
            alunos.setEndereco(jTextFieldendereco.getText());
@@ -208,6 +212,10 @@ try{
            alunos.setSenha(jTextFieldsenha.getText());           
            controlealunos.salvar(alunos);
            JOptionPane.showMessageDialog(rootPane,"Aluno salvo com sucesso");
+           
+      }else{
+           JOptionPane.showMessageDialog(rootPane,"Campo nome obrigatório");
+      }
 }catch(Exception ex){
     throw new RuntimeException("Erro ao Salvar Aluno",ex);
 }
